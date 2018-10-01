@@ -4,23 +4,23 @@
 
 This one day hands-on classroom style session will provide developers (and operators) with hands on experience with Pivotal Cloud Foundry concepts, architecture and fundamentals of pushing code and building applications. The session includes presentations, demos and hands on labs
 
-9:30 AM - 10:00 AM::
- * Session 1: _Introduction_
+9:00 AM - 10:00 AM::
+ * Session 1: _Introduction and PCF Overview_ 
 10:00 AM - 10:15 AM::
-* Lab 1
-10:15 AM - 11:00 AM::
+ * Lab 1_
+10:15 AM - 11:00 AM:: 
 * Session 2: _PCF Architecture & Operations_
-11:00 PM - 11:15 PM::
-* Lab 2
+11:00 AM - 11:15 AM:: 
+* Lab 2_
 11:15 AM - 11:30 AM:: Break
-11:30 AM - 12:00 PM::
-* Session 3: _Leveraging the Pivotal Cloud Foundry Marketplace_
-12:00 PM - 12:30 PM::
-* Lab 3
-12:30 PM - 1:00 PM:: Lunch
-1:00 PM - 2:00 PM::
- * Session 4: _Continuous Delivery & Microservices (CN Enterprise)_
-
+11:30 AM - 12:00 PM:: 
+* Session 3: _Leveraging the Pivotal Cloud Foundry Services and Marketplace_
+12:00 PM - 12:30 PM:: 
+* Labs 3
+12:30 PM - 1:00 PM:: 
+* Lunch
+1:00 PM - 1:30 PM:: 
+* Session 4: Continuous Delivery & Microservices (CN Enterprise)_
 == Course Materials
 
 * Session 1: link:https://drive.google.com/open?id=1xsU9qEpY0HFQVVSvDwQNSN0uc1AMclf3rSePr12C-YE[PCF Technical Overview]
