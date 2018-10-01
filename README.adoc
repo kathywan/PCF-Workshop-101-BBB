@@ -7,26 +7,33 @@ This one day hands-on classroom style session will provide developers (and opera
 9:00 AM - 10:00 AM::
  * Session 1: _Introduction and PCF Overview_ 
 10:00 AM - 10:15 AM::
- * Lab 1_
+ * _Lab 1_
 10:15 AM - 11:00 AM:: 
 * Session 2: _PCF Architecture & Operations_
 11:00 AM - 11:15 AM:: 
-* Lab 2_
-11:15 AM - 11:30 AM:: Break
+* _Lab 2_
+11:15 AM - 11:30 AM:: 
+* _Break_
 11:30 AM - 12:00 PM:: 
 * Session 3: _Leveraging the Pivotal Cloud Foundry Services and Marketplace_
 12:00 PM - 12:30 PM:: 
-* Labs 3
+* _Labs 3_
 12:30 PM - 1:00 PM:: 
 * Lunch
 1:00 PM - 1:30 PM:: 
 * Session 4: Continuous Delivery & Microservices (CN Enterprise)_
+1:30 PM -2:00 PM:: 
+* _Labs 4_
+2:00 PM - 3:00 AM:: 
+* _Questions and Customer Scenarios_
+3:00 PM - 4:00 AM:: 
+* _PoC success criterias for apps_
 
 == Course Materials
 
 * Session 1: link:https://drive.google.com/open?id=1yEawIjbA9qWaMVlQ7wVygF9cLN4EJKRQQWGpUaTQaxg[PCF Technical Overview]
 * Session 2: link:https://drive.google.com/open?id=1gYiIP9s5YrAAa_ZyyqmIBnY4Uw3j9LTl8Yhi8Mhrwhc[PCF Architecture and Operations]
-* Session 3: link:https://drive.google.com/open?id=1G2PqWQHOqhxnZXPTuho_Lg9RRMZcr4-JpSsibT3V16Q[PCF Services]
+* Session 3: link:https://drive.google.com/open?id=1G2PqWQHOqhxnZXPTuho_Lg9RRMZcr4-JpSsibT3V16Q[PCF Services and Marketplace]
 * Session 4: link:https://drive.google.com/open?id=1lqguIFaAGyWoxs6ar0AdGGqYnnLq8lQKm0n3mWEWD_I[PCF Cloud Native Approach]
 
 * Developer Workshop
