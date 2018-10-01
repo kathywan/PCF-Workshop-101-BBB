@@ -21,12 +21,13 @@ This one day hands-on classroom style session will provide developers (and opera
 * Lunch
 1:00 PM - 1:30 PM:: 
 * Session 4: Continuous Delivery & Microservices (CN Enterprise)_
+
 == Course Materials
 
-* Session 1: link:https://drive.google.com/open?id=1xsU9qEpY0HFQVVSvDwQNSN0uc1AMclf3rSePr12C-YE[PCF Technical Overview]
-* Session 2: link:https://drive.google.com/open?id=1VfIKeerXPsJlxpHGsJZATCQf70Wdxj_-oWSUrl2nzpI[PCF Architecture and Operations]
-* Session 3: link:https://drive.google.com/open?id=10INraPqFE6aCFr3ijLspniKF1WMPkuIVz0NjupHNAiY[PCF Services]
-* Session 4: link:https://drive.google.com/open?id=1SLaME1_TzL5PmTcY022k1AqD54WnMlLUyTod8-dMAFA[PCF Cloud Native Approach]
+* Session 1: link:https://drive.google.com/open?id=1yEawIjbA9qWaMVlQ7wVygF9cLN4EJKRQQWGpUaTQaxg[PCF Technical Overview]
+* Session 2: link:https://drive.google.com/open?id=1gYiIP9s5YrAAa_ZyyqmIBnY4Uw3j9LTl8Yhi8Mhrwhc[PCF Architecture and Operations]
+* Session 3: link:https://drive.google.com/open?id=1G2PqWQHOqhxnZXPTuho_Lg9RRMZcr4-JpSsibT3V16Q[PCF Services]
+* Session 4: link:https://drive.google.com/open?id=1lqguIFaAGyWoxs6ar0AdGGqYnnLq8lQKm0n3mWEWD_I[PCF Cloud Native Approach]
 
 * Developer Workshop
 ** Pre-work
