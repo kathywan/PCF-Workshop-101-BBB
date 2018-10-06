@@ -11,22 +11,28 @@
 . Set the API target for the CLI: (set appropriate end point for your environment)
 +
 ----
-$ cf api https://api.sys.gn01.pcf.dcsg.com --skip-ssl-validation
+$ cf api api.run.haas-123.pez.pivotal.io --skip-ssl-validation
 ----
 
 . Login to Pivotal Cloudfoundry:
 +
 ----
-$ cf login --sso
+$ cf login
 ----
 +
 Follow the prompts
++
+Alternatively you can use one command:
++
+----
+cf login -a api.run.haas-123.pez.pivotal.io -u username -p password
+----
 
 == Apps Manager UI
 
 . An alternative to installing the CF CLI is via your PCF Apps Manager interface.
 
-. Navigate in a web browser to https://login.sys.gn01.pcf.dcsg.com/login
+. Navigate in a web browser to https://apps.run.haas-123.pez.pivotal.io
 
 . Login to the interface with your email and workshop password. Note the password will be supplied by the instructor on the day of delivery.
 

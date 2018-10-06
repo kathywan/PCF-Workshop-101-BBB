@@ -8,14 +8,14 @@
 cf api --skip-ssl-validation $1
 
 ## login
-cf login -u instructor -p gonative -o system -s console
+cf login -u instructor -p gonative -o system -s system
 
 
 cf create-quota workshop -m 10G -r 1000 -s 10
 
 i="1"
 ## create personal accounts
-while [ $i -lt 26 ]
+while [ $i -lt 21 ]
 do
 pword="password"
 cf create-user student$[$i] $pword
