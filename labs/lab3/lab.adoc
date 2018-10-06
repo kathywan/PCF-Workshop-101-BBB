@@ -68,8 +68,8 @@ You should observe the instance index changing as you do so:
 +
 image::lab.png[]
 +
-The aforementioned http://docs.cloudfoundry.org/concepts/architecture/router.html[(Go)Router] is applying a random routing algorithm to all of the application instances assigned to this route.
-As an instance reaches the `running` state, its http://docs.cloudfoundry.org/concepts/architecture/execution-agent.html[DEA] registers that instance in the routing table assigned to its route by sending a message to Cloud Foundry's message bus.
+The aforementioned http://docs.cloudfoundry.org/concepts/architecture/router.html[(Go)Router] is applying a round-robin routing algorithm to all of the application instances assigned to this route.
+As an instance reaches the `running` state, it'll be registed to the routing table assigned to its route by sending a message to Cloud Foundry's message bus.
 All (Go)Router instances are subscribed to this channel and register the routes independently.
 This makes for very dynamic and rapid reconfiguration!
 
