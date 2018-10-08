@@ -84,8 +84,9 @@ public class CloudFoundryWorkshopController {
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public String delete(@RequestParam("attendeeId") Long attendeeId, Model model) throws Exception {
-		attendeeRepository.delete(attendeeId);
-		setModel(model);
+		Optional<Attendee> found = attendeeRepository.findById(attendeeId);
+		if(found.isPresent())
+			attendeeRepository.delete(found.get());		setModel(model);
 		return "redirect:/";
 	}
 	

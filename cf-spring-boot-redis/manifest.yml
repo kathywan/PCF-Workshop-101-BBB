@@ -1,0 +1,9 @@
+applications:
+- name: redisws
+  memory: 1G
+  instances: 1
+  random-route: true
+  path: ./target/cf-spring-boot-redis-0.0.1-SNAPSHOT.jar
+  buildpack: java_buildpack_offline
+  services:
+  - myredis

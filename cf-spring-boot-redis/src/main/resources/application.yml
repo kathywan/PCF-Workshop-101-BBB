@@ -1,0 +1,13 @@
+management:
+  cloudfoundry:
+    skip-ssl-validation: true
+    enabled: true
+  security:
+    enabled: false
+  info:
+    git:
+      mode: full
+
+
+
+

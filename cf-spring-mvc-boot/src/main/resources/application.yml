@@ -1,0 +1,14 @@
+management:
+  cloudfoundry:
+    skip-ssl-validation: true
+  security:
+    enabled: false
+  info:
+    git:
+      mode: full
+---
+spring:
+  jpa:
+    generate-ddl: true
+
+
