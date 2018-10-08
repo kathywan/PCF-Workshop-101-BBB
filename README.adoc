@@ -20,7 +20,8 @@ This one day hands-on classroom style session will provide developers (and opera
 12:30 AM - 1:30 AM:: 
 * Lunch
 1:30 PM -2:30 PM:: 
-* Session 2: _Application Operations (continued)_
+* Session 3: _Application Operations (continued)_
+* _Lab 4_
 2:30 PM - 3:30 AM:: 
 * _Questions and Customer Scenarios_
 3:30 PM - 4:00 AM:: 
