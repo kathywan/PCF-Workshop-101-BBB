@@ -11,8 +11,8 @@ In the next two labs we'll explore Pivotal Cloudfoundry operations.
 . Now let's increase the number of running application instances to 3.  For this lab you can use the Java, Ruby, or Node.js sample app.  In each of the commands below replace _workshop_ with the name of your deployed application:
 +
 ----
-$ cf scale -i 2 workshop
-Scaling app workshop in org TELCO / space gammon as jtgammon@pivotal.io...
+$ cf scale scale-demo -i 2
+Scaling app scale-demo in org student20-org / space development as student20...
 OK
 ----
 +
@@ -22,21 +22,21 @@ In reporting `OK`, the CLI is letting you know that the additional requested ins
 +
 ====
 ----
-$ cf app workshop
-Showing health and status for app workshop in org TELCO / space gammon as jtgammon@pivotal.io...
-OK
+$ cf app scale-demo
+Showing health and status for app scale-demo in org student20-org / space development as student20...
 
-requested state: started
-instances: 1/2
-usage: 512M x 2 instances
-urls: workshop.vert.fe.gopivotal.com, workshop-queasier-backup.vert.fe.gopivotal.com
-last uploaded: Fri Aug 7 13:15:14 UTC 2015
-stack: cflinuxfs2
-buildpack: java-buildpack=v3.0-offline-https://github.com/cloudfoundry/java-buildpack.git#3bd15e1 open-jdk-jre=1.8.0_40 spring-auto-reconfiguration=1.7.0_RELEASE tomcat-access-logging-support=2.4.0_RELEASE tomcat-instance=8.0.21 tomcat-lifecycle-support=2.4.0_REL...
+name:              scale-demo
+requested state:   started
+instances:         2/2
+usage:             128M x 2 instances
+routes:            scale-demo-wacky-chipmunk.cfapps.haas-123.pez.pivotal.io
+last uploaded:     Mon 08 Oct 10:35:30 EDT 2018
+stack:             cflinuxfs2
+buildpack:         ruby
 
-     state      since                    cpu    memory           disk           details
-#0   running    2015-08-07 11:33:21 AM   0.1%   477.9M of 512M   144.4M of 1G  <1>
-#1   starting   2015-08-07 12:42:56 PM   0.0%   0 of 0           0 of 0  <2>
+     state     since                  cpu    memory          disk          details
+#0   running   2018-10-08T14:36:09Z   0.0%   24.5M of 128M   94.3M of 1G    <1>
+#1   starting   2018-10-08T22:25:19Z   0.0%   19.5M of 128M   94.3M of 1G    <2>
 ----
 <1> This application instance has completed the startup process and is actually able to accept requests.
 <2> This application instance is still starting and will not have any requests routed to it.
@@ -45,21 +45,21 @@ buildpack: java-buildpack=v3.0-offline-https://github.com/cloudfoundry/java-buil
 . Eventually all instances will converge to a running state:
 +
 ----
-$ cf app workshop
-Showing health and status for app workshop in org TELCO / space gammon as jtgammon@pivotal.io...
-OK
+$ cf app scale-demo
+Showing health and status for app scale-demo in org student20-org / space development as student20...
 
-requested state: started
-instances: 2/2
-usage: 512M x 2 instances
-urls: workshop.vert.fe.gopivotal.com, workshop-queasier-backup.vert.fe.gopivotal.com
-last uploaded: Fri Aug 7 13:15:14 UTC 2015
-stack: cflinuxfs2
-buildpack: java-buildpack=v3.0-offline-https://github.com/cloudfoundry/java-buildpack.git#3bd15e1 open-jdk-jre=1.8.0_40 spring-auto-reconfiguration=1.7.0_RELEASE tomcat-access-logging-support=2.4.0_RELEASE tomcat-instance=8.0.21 tomcat-lifecycle-support=2.4.0_REL...
+name:              scale-demo
+requested state:   started
+instances:         2/2
+usage:             128M x 2 instances
+routes:            scale-demo-wacky-chipmunk.cfapps.haas-123.pez.pivotal.io
+last uploaded:     Mon 08 Oct 10:35:30 EDT 2018
+stack:             cflinuxfs2
+buildpack:         ruby
 
-     state     since                    cpu    memory           disk           details
-#0   running   2015-08-07 11:33:21 AM   0.1%   477.9M of 512M   144.4M of 1G
-#1   running   2015-08-07 12:43:04 PM   0.2%   396.2M of 512M   144.4M of 1G
+     state     since                  cpu    memory          disk          details
+#0   running   2018-10-08T14:36:09Z   0.0%   24.5M of 128M   94.3M of 1G
+#1   running   2018-10-08T22:25:19Z   0.0%   19.5M of 128M   94.3M of 1G
 ----
 
 . Revisit the application route in the browser.
@@ -78,28 +78,28 @@ This makes for very dynamic and rapid reconfiguration!
 . We can scale the application instances back down as easily as we scaled them up, using the same command structure:
 +
 ----
-$ cf scale -i 1 workshop
-Scaling app workshop in org TELCO / space gammon as jtgammon@pivotal.io...
+$ cf scale scale-demo -i 1
+Scaling app scale-demo in org student20-org / space development as student20...
 OK
 ----
 
 . Check the application status again:
 +
 ----
-$ cf app workshop
-Showing health and status for app workshop in org TELCO / space gammon as jtgammon@pivotal.io...
-OK
+$ cf app scale-demo
+Showing health and status for app scale-demo in org student20-org / space development as student20...
 
-requested state: started
-instances: 1/1
-usage: 512M x 1 instances
-urls: workshop.vert.fe.gopivotal.com, workshop-queasier-backup.vert.fe.gopivotal.com
-last uploaded: Fri Aug 7 13:15:14 UTC 2015
-stack: cflinuxfs2
-buildpack: java-buildpack=v3.0-offline-https://github.com/cloudfoundry/java-buildpack.git#3bd15e1 open-jdk-jre=1.8.0_40 spring-auto-reconfiguration=1.7.0_RELEASE tomcat-access-logging-support=2.4.0_RELEASE tomcat-instance=8.0.21 tomcat-lifecycle-support=2.4.0_REL...
+name:              scale-demo
+requested state:   started
+instances:         1/1
+usage:             128M x 1 instances
+routes:            scale-demo-wacky-chipmunk.cfapps.haas-123.pez.pivotal.io
+last uploaded:     Mon 08 Oct 10:35:30 EDT 2018
+stack:             cflinuxfs2
+buildpack:         ruby
 
-     state     since                    cpu    memory           disk           details
-#0   running   2015-08-07 11:33:21 AM   0.1%   477.9M of 512M   144.4M of 1G
+     state     since                  cpu    memory          disk          details
+#0   running   2018-10-08T14:36:09Z   0.0%   25.3M of 128M   94.3M of 1G
 ----
 +
 As you can see, we're back down to only one instance running, and it is in fact the original index 0 that we started with.

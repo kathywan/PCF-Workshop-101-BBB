@@ -12,7 +12,7 @@ This lab will guide you through building a *BASIC* continuous delivery pipeline 
 
 . Edit the manifest.yml at the root of the forked spring-music repository. Change the *host* from ${random-word} to your initials. Jenkins does not like the special characters in the host field and will give an error.
 
-. Login to your Jenkins instance at https://jenkins-0.example.com/ with the same username and password that you use for CloudFoundry.
+. Login to your Jenkins instance if you already have one. Alternatively you can quickly start jenkins instance by following https://hub.docker.com/r/jenkins/jenkins/. Make sure Git and Gradle plugin are installed.
 
 
 == Create the Build Job
