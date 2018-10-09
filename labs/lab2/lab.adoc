@@ -69,7 +69,7 @@ applications:
 
 
 . Now let's begin by creating a Redis service instance.
-From the Apps Manager UI service marketplace, select _Redis_, select the *Shared-VM plan*, and provide an instance name as "myredis" as specified in manifest.
+From the Apps Manager UI service marketplace, select _p-redis_, select the *Shared-VM plan*, and provide an instance name as "myredis" as specified in manifest.
 Don't bind to any application yet.
 +
 image::lab3.png[]
