@@ -6,6 +6,10 @@ management:
   info:
     git:
       mode: full
+  metrics:
+    enable:
+      root: false
+      jvm: true
 ---
 spring:
   jpa:

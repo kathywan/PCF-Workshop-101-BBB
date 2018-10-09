@@ -13,8 +13,6 @@ Effective management of logs has historically been very difficult.
 Cloud Foundry's https://github.com/cloudfoundry/loggregator[log aggregation] components simplify log management by assuming responsibility for it.
 Application developers need only log all messages to either `STDOUT` or `STDERR`, and the platform will capture these messages.
 
-=== For Developers
-
 Application developers can view application logs using the CF CLI.
 
 . Let's view recent log messages for the application.  For this lab you can use the Java, Ruby, or Node.js sample app.  In each of the commands below replace _workshop_ with the name of your deployed application:
@@ -43,17 +41,17 @@ Here are two interesting subsets of one output from that command:
 ====
 ----
 2018-10-08T18:49:40.98-0400 [APP/PROC/WEB/1] OUT 2018-10-08 22:49:40.982  INFO 18 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-   2018-10-08T18:49:40.98-0400 [APP/PROC/WEB/1] OUT 2018-10-08 22:49:40.985  INFO 18 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
-   2018-10-08T18:49:40.99-0400 [APP/PROC/WEB/1] OUT 2018-10-08 22:49:40.995  INFO 18 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
-   2018-10-08T18:49:41.07-0400 [APP/PROC/WEB/1] OUT 2018-10-08 22:49:41.075  INFO 18 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-   2018-10-08T18:49:41.08-0400 [APP/PROC/WEB/1] OUT 2018-10-08 22:49:41.084  INFO 18 --- [           main] io.pivotal.workshop.WorkshopApplication  : Started WorkshopApplication in 13.437 seconds (JVM running for 15.126)
+2018-10-08T18:49:40.98-0400 [APP/PROC/WEB/1] OUT 2018-10-08 22:49:40.985  INFO 18 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-10-08T18:49:40.99-0400 [APP/PROC/WEB/1] OUT 2018-10-08 22:49:40.995  INFO 18 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-10-08T18:49:41.07-0400 [APP/PROC/WEB/1] OUT 2018-10-08 22:49:41.075  INFO 18 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-10-08T18:49:41.08-0400 [APP/PROC/WEB/1] OUT 2018-10-08 22:49:41.084  INFO 18 --- [           main] io.pivotal.workshop.WorkshopApplication  : Started WorkshopApplication in 13.437 seconds (JVM running for 15.126)
 ----
 ====
 +
 As you can see, Cloud Foundry's log aggregation components capture both application logs and CF component logs relevant to your application.
 These events are properly interleaved based on time, giving you an accurate picture of events as they transpired across the system.
 
-. To get a running ``tail'' of the application logs rather than a dump, simply type:
+. To get a running "tail" of the application logs rather than a dump, simply type:
 +
 ----
 $ cf logs workshop
@@ -111,16 +109,16 @@ Also, if you're paying attention to the log tail, you'll see some interesting lo
 ====
 ----
 2018-10-08T19:10:40.87-0400 [CELL/0] OUT Cell c5c13390-9d18-41a0-8a8a-1098edbd2250 creating container for instance e7e0e00c-57fb-4256-703f-ade3
-   2018-10-08T19:10:41.25-0400 [CELL/0] OUT Cell aea1c927-4993-41a1-8302-d3b286603f51 successfully destroyed container for instance 9955a131-a245-4840-4f3f-9f94
-   2018-10-08T19:10:41.37-0400 [CELL/0] OUT Cell c5c13390-9d18-41a0-8a8a-1098edbd2250 successfully created container for instance e7e0e00c-57fb-4256-703f-ade3
-   2018-10-08T19:10:42.55-0400 [CELL/0] OUT Starting health monitoring of container
-   2018-10-08T19:10:42.71-0400 [APP/PROC/WEB/0] OUT JVM Memory Configuration: -Xmx157226K -Xss1M -XX:ReservedCodeCacheSize=240M -XX:MaxDirectMemorySize=10M -XX:MaxMetaspaceSize=117205K
+2018-10-08T19:10:41.25-0400 [CELL/0] OUT Cell aea1c927-4993-41a1-8302-d3b286603f51 successfully destroyed container for instance 9955a131-a245-4840-4f3f-9f94
+2018-10-08T19:10:41.37-0400 [CELL/0] OUT Cell c5c13390-9d18-41a0-8a8a-1098edbd2250 successfully created container for instance e7e0e00c-57fb-4256-703f-ade3
+2018-10-08T19:10:42.55-0400 [CELL/0] OUT Starting health monitoring of container
+2018-10-08T19:10:42.71-0400 [APP/PROC/WEB/0] OUT JVM Memory Configuration: -Xmx157226K -Xss1M -XX:ReservedCodeCacheSize=240M -XX:MaxDirectMemorySize=10M -XX:MaxMetaspaceSize=117205K
 ----
 <1> The Cell indicates that it is starting another instance of the application (since Health monitoring observing a difference between the desired and actual state).
 <2> The new application instance starts logging events as it starts up.
 ====
 
-. Revisiting the *HOME PAGE* of the application (don't simply refresh the browser as you're still on the `/killSwitch` endpoint and you'll just kill the application again!) and you should see a fresh instance started:
+. Revisiting the *HOME PAGE* of the application (don't simply refresh the browser as you're still on the `/kill` endpoint and you'll just kill the application again!) and you should see a fresh instance started:
 +
 image::lab2.png[]
 
@@ -216,3 +214,19 @@ Getting events for app workshop in org student20-org / space development as stud
 time                          event                      actor       description
 2018-10-08T19:37:50.00-0400   audit.app.update           student20   state: STARTED
 ----
+
+== PCF Metrics
+access PCF Metrics from Application page on AppsManager
+
+image::metrics.png[]
+
+PCF Metrics helps monitoring the health and performance of your application by providing container/network/custom metrics
+
+image::metrics1.png[]
+
+Gives aggregated view of logs along with search/filter/download capabilities
+
+image::metrics2.png[]
+
+
+
