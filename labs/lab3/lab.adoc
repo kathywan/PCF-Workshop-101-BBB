@@ -7,7 +7,7 @@ In the next two labs we'll explore Pivotal Cloudfoundry operations.
 --
 
 == Scale the Application Up
-. Follow the steps here to CF Push a simple lightweight link:labs/lab1/lab-ruby.adoc[**Ruby** Application]
+. Follow the steps here to CF Push a simple lightweight link:../lab1/lab-ruby.adoc[**Ruby** Application]
 +
 . Now let's increase the number of running application instances to 3:
 +
