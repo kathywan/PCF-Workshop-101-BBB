@@ -27,7 +27,7 @@ public class CloudFoundryWorkshopController {
 	private static final Logger logger = LoggerFactory.getLogger(CloudFoundryWorkshopController.class);
 
 	@Autowired
-	private AttendeeRepository attendeeRepository;
+	private AttendeeRepository repo;
 
 	/**
 	 * Gets basic environment information.  This is the application's
@@ -51,9 +51,7 @@ public class CloudFoundryWorkshopController {
 	 */
 	@RequestMapping(value = "/attendees", method = RequestMethod.GET)
 	public String attendees(Model model) {
-
-		Iterable<Attendee> attendees = attendeeRepository.findAll();
-		model.addAttribute("attendees", attendees);
+		model.addAttribute("attendees", getAttendees());
 		return "attendees";
 	}
 
@@ -78,17 +76,38 @@ public class CloudFoundryWorkshopController {
 		String vcapServices = System.getenv("VCAP_SERVICES");
 		model.addAttribute("vcapServices", vcapServices);
 
-		Iterable<Attendee> attendees = attendeeRepository.findAll();
-		model.addAttribute("attendees", attendees);
+		model.addAttribute("attendees", getAttendees());
 	}
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public String delete(@RequestParam("attendeeId") Long attendeeId, Model model) throws Exception {
-		Optional<Attendee> found = attendeeRepository.findById(attendeeId);
-		if(found.isPresent())
-			attendeeRepository.delete(found.get());
+		try {
+			Optional<Attendee> found = repo.findById(attendeeId);
+			if(found.isPresent()) repo.delete(found.get());
+		} catch(Exception ex) {
+			//ex.printStackTrace();
+		}
 		setModel(model);
 		return "redirect:/";
+	}
+
+	private Iterable<Attendee> getAttendees() {
+		try {
+			return repo.findAll();
+		} catch(Exception ex) {
+			//ex.printStackTrace();
+		}
+		Attendee attendee1 = new Attendee();
+		attendee1.setId(5001L);
+		attendee1.setFirstName("John");
+		attendee1.setLastName("Smith");
+		attendee1.setAddress("123 Main St");
+		attendee1.setCity("Akron");
+		attendee1.setState("OH");
+		attendee1.setZipCode("44321");
+		attendee1.setPhoneNumber("330-123-4567");
+		attendee1.setEmailAddress("jsmith@gopivotal.com");
+		return Arrays.asList(attendee1);
 	}
 	
 	/**

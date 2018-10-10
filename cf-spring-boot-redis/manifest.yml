@@ -1,9 +1,9 @@
 applications:
-- name: redisws
+- name: workshop
   memory: 1G
   instances: 1
   random-route: true
   path: ./target/cf-spring-boot-redis-0.0.1-SNAPSHOT.jar
   buildpack: java_buildpack_offline
-  services:
-  - myredis
+  env:
+    JAVA_OPTS: -Djava.security.egd=file:///dev/urandom

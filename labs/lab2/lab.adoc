@@ -48,37 +48,17 @@ image::lab2.png[]
 
 == Creating and Binding to a Service Instance
 
-We will use a separate spring boot application which requires Redis server.
-Make sure to change to the _cf-spring-boot-redis_ sample application directory.
-
-. Open the manifest.yml file. Note down the service name specified.
-Your manifest.yml should be like this:
-+
-----
----
-applications:
-- name: redisws
-  memory: 1G
-  instances: 1
-  random-route: true
-  path: ./target/cf-spring-boot-redis-0.0.1-SNAPSHOT.jar
-  buildpack: java_buildpack_offline
-  services:
-  - myredis
-----
-
-
-. Now let's begin by creating a Redis service instance.
+. Let's begin by creating a Redis service instance.
 From the Apps Manager UI service marketplace, select _Redis_, select the *Shared-VM plan*, and provide an instance name as "myredis" as specified in manifest.
-Don't bind to any application yet.
+Select your workshop application in the "bind" dropdown to bind this service into your spring boot application.
 +
 image::lab3.png[]
 
 
-. Now let's _push_ the application
+. Now let's _restart_ the application.  Since each container is immutable in order to introduce a service it must be restarted.
 +
 ----
-$ cf push
+$ cf restart
 ----
 
 . Once the application is running, visit the app route URL.  You'll notice now we have information that could be used to connect to a DB.
