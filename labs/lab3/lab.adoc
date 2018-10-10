@@ -12,7 +12,7 @@ In the next two labs we'll explore Pivotal Cloudfoundry operations.
 . Now let's increase the number of running application instances to 3:
 +
 ----
-$ cf scale scale-demo -i 2
+$ cf scale scale-demo -i 3
 Scaling app scale-demo in org student20-org / space development as student20...
 OK
 ----
@@ -28,8 +28,8 @@ Showing health and status for app scale-demo in org student20-org / space develo
 
 name:              scale-demo
 requested state:   started
-instances:         2/2
-usage:             128M x 2 instances
+instances:         3/3
+usage:             128M x 3 instances
 routes:            scale-demo-wacky-chipmunk.cfapps.haas-123.pez.pivotal.io
 last uploaded:     Mon 08 Oct 10:35:30 EDT 2018
 stack:             cflinuxfs2
@@ -38,6 +38,7 @@ buildpack:         ruby
      state     since                  cpu    memory          disk          details
 #0   running   2018-10-08T14:36:09Z   0.0%   24.5M of 128M   94.3M of 1G    <1>
 #1   starting   2018-10-08T22:25:19Z   0.0%   19.5M of 128M   94.3M of 1G    <2>
+#2   starting   2018-10-08T22:25:19Z   0.0%   19.5M of 128M   94.3M of 1G    <2>
 ----
 <1> This application instance has completed the startup process and is actually able to accept requests.
 <2> This application instance is still starting and will not have any requests routed to it.
@@ -140,7 +141,7 @@ The second way is via the Apps Manager UI.  Click on the _Workshop_ application 
 
 image::lab2.png[]
 
-. We can easily add an additional route by clicking on _MAP A ROUTE_ and supplying the new hostname:
+. We can easily add an additional route by clicking on _MAP A ROUTE_ and supplying the new hostname.  Make sure to use a unique name that won't conflict with other workshop participants:
 +
 image::lab3.png[]
 
@@ -163,5 +164,19 @@ image::blue-green.png[]
 == Accessing Container Contents
 
 SSH into your app container via 'cf ssh APP_NAME'
-
++
+----
+$ cf ssh workshop
+vcap@18de6089-644b-41ae-56e1-101f:~$ ls
+app  deps  logs  profile.d  staging_info.yml  tmp
+vcap@18de6089-644b-41ae-56e1-101f:~$ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   1084     4 ?        S<s  17:40   0:00 /tmp/garden-init
+vcap          13  9.2  0.5 2096816 392304 ?      S<sl 17:40   0:59 /home/vcap/app/.java-buildpack/open_jdk_jre/bin/java -agentpath:/home/vcap/app/.jav
+vcap          19  0.0  0.0  16928  9696 ?        S<sl 17:40   0:00 /tmp/lifecycle/diego-sshd --allowedKeyExchanges= --address=0.0.0.0:2222 --allowUnau
+root         106  0.0  0.0   7184  3480 ?        S<sl 17:40   0:00 /etc/cf-assets/healthcheck/healthcheck -port=8080 -timeout=1000ms -liveness-interva
+vcap         166  0.0  0.0  62552  3820 pts/0    S<s  17:51   0:00 /bin/bash
+vcap         183  0.0  0.0  59928  2660 pts/0    R<+  17:51   0:00 ps aux
+----
++
 Reference: https://docs.pivotal.io/pivotalcf/customizing/diego-ssh/access-apps.html
