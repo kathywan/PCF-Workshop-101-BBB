@@ -20,10 +20,10 @@ Follow the prompts
 
 == Push It!
 
-. Change to the _cf-spring-mvc-boot_ sample application directory:
+. Change to the _cf-spring-boot-redis_ sample application directory:
 +
 ----
-$ cd $BOOTCAMP_HOME/cf-spring-mvc-boot
+$ cd $BOOTCAMP_HOME/cf-spring-boot-redis
 ----
 
 . Push the application!
@@ -37,11 +37,11 @@ You should see output similar to the following listing. Take a look at the listi
 ====
 ----
 Pushing from manifest to org kwan / space development as qwan@pivotal.io...
-Using manifest file /Users/qwan/workspace/git/BBB/PCF-Workshop-101-BBB/cf-spring-mvc-boot/manifest.yml
+Using manifest file /Users/qwan/workspace/git/BBB/PCF-Workshop-101-BBB/cf-spring-boot-redis/manifest.yml
 Getting app info...
 Creating app with these attributes...
 + name:        workshop
-  path:        /Users/qwan/workspace/git/BBB/PCF-Workshop-101-BBB/cf-spring-mvc-boot/target/cf-spring-mvc-boot-0.0.1-SNAPSHOT.jar
+  path:        /Users/qwan/workspace/git/BBB/PCF-Workshop-101-BBB/cf-spring-boot-redis/target/cf-spring-boot-redis-0.0.1-SNAPSHOT.jar
 + instances:   1
 + memory:      768M
   env:
