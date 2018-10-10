@@ -25,7 +25,7 @@ Follow the prompts
 Alternatively you can use one command:
 +
 ----
-cf login -a api.run.haas-123.pez.pivotal.io -u username -p password
+cf login -a api.run.haas-123.pez.pivotal.io -u username -p password --skip-ssl-validation
 ----
 
 == Apps Manager UI
