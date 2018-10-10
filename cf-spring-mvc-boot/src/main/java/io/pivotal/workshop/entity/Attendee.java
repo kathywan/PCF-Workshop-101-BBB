@@ -1,8 +1,6 @@
 package io.pivotal.workshop.entity;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.LinkedHashSet;
 
 /**
  * Attendee entity
