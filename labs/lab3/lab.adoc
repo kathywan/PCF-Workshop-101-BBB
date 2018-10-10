@@ -164,7 +164,6 @@ image::blue-green.png[]
 == Accessing Container Contents
 
 SSH into your app container via 'cf ssh APP_NAME'
-+
 ----
 $ cf ssh workshop
 vcap@18de6089-644b-41ae-56e1-101f:~$ ls
@@ -178,5 +177,5 @@ root         106  0.0  0.0   7184  3480 ?        S<sl 17:40   0:00 /etc/cf-asset
 vcap         166  0.0  0.0  62552  3820 pts/0    S<s  17:51   0:00 /bin/bash
 vcap         183  0.0  0.0  59928  2660 pts/0    R<+  17:51   0:00 ps aux
 ----
-+
+
 Reference: https://docs.pivotal.io/pivotalcf/customizing/diego-ssh/access-apps.html
