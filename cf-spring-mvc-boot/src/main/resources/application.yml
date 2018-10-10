@@ -6,6 +6,10 @@ management:
   info:
     git:
       mode: full
+  endpoints:
+    web:
+      exposure:
+        include: '*'
   metrics:
     enable:
       root: false

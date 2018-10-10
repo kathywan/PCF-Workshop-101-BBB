@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - WorkshopApplication",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "io.pivotal.workshop.WorkshopApplication",
+            "args": "",
+            "projectName": "cf-spring-mvc-boot"
+        }
+    ]
+}
